@@ -1,0 +1,131 @@
+/* Reset untuk elemen dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container untuk sidebar dan konten utama */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar style */
+#sidebar {
+    width: 200px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    transition: width 0.3s ease;
+}
+
+#sidebar:hover {
+    width: 250px; /* Menambah lebar sidebar saat hover */
+}
+
+/* Logo sidebar */
+.sidebar-logo {
+    margin-bottom: 20px;
+}
+
+.sidebar-logo-img {
+    width: 120px;
+    height: auto;
+}
+
+/* Tombol toggle sidebar */
+.toggle-btn {
+    background-color: #34495e;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.toggle-btn:hover {
+    background-color: #1abc9c;
+}
+
+#sidebar.expand {
+    width: 300px;
+    min-width: 300px;
+}
+
+/* Sidebar navigasi */
+.sidebar-nav {
+    list-style-type: none;
+    width: 100%;
+}
+
+.sidebar-item {
+    width: 100%;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    text-decoration: none;
+    color: #ecf0f1;
+    transition: background-color 0.3s;
+}
+
+.sidebar-link:hover {
+    background-color: #16a085;
+}
+
+.sidebar-link i {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+/* Dropdown di sidebar */
+.sidebar-item .sidebar-dropdown {
+    display: none;
+    padding-left: 20px;
+}
+
+.sidebar-item:hover .sidebar-dropdown {
+    display: block;
+    list-style: none;
+}
+
+/* Konten utama */
+.main {
+    flex-grow: 1;
+    background-color: white;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    color: #34495e;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .main {
+        padding: 15px;
+    }
+}
